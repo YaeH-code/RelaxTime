@@ -1,0 +1,44 @@
+.style-ul{
+  list-style: none;
+}
+
+.carousel-item {
+  transition: transform 2s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 3s;
+}
+
+nav{
+  font-family: serif !important;
+}
+
+.text-origin{
+  font-family: 'Cinzel', serif;
+}
+
+p, a, li{
+  font-family: serif;
+}
+
+.home-img{
+  width: 100%;
+  height: 16vw;
+  object-fit: cover;
+}
+
+.cover-img{
+  /* width: 100%; */
+  height: 30vw;
+  object-fit: cover;
+}
+
+.cat-hover{
+  transition: 0.2s ease-in-out;
+}
+.cat-hover:hover{
+  transform: scale(1.2);
+  -webkit-transform: translate(5px, -5px);
+}
