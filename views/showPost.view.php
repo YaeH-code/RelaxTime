@@ -35,29 +35,33 @@ endif;
     </div>
     <!-- comments -->
             <div class="text-center" style="overflow-y: auto; max-height: 200px;">
-            <?php if($comments !== NULL): ?>
-                    <?php foreach($comments as $comment): ?>
-                            <?php if($comment->getUser_id() !== NULL && $comment->getPost_id() == $post->getId()): ?>
-                                <?php foreach($users as $user): ?>
-                                    <?php if($comment->getUser_id()== $user->getId() ): ?>
-                                        <div class="container row mx-auto">
-                                            <p class="col-sm-8"><?= $user->getName() ;?> : <?= $comment->getComment();?></p>
-                                            <?php if (array_key_exists('name', $_SESSION) == TRUE):?>
-                                                <?php if ($_SESSION['id'] == $comment->getUser_id() || $_SESSION['role'] == 'admin'): ?>
-                                                    <form method="POST" action="<?= URL ?>articles/dc/<?= $comment->getId();?>" class="col-sm-2">
-                                                        <input type="hidden" name="post_id" value="<?= $post->getId() ?>" />
-                                                        <button class="btn btn-outline-secondary" type="submit">Delete</button>
-                                                    </form>
-                                                    <?php endif; ?>
-                                                <?php else :?>
-                                            <?php endif; ?>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                    <?php endforeach; ?>
-            <?php else:?>
-                            <p>No comments</p>
+            <?php if(empty($comments)):?>
+                <p>Empty comments</p>
+            <?php else :?>
+                <?php if($comments !== NULL): ?>
+                        <?php foreach($comments as $comment): ?>
+                                <?php if($comment->getUser_id() !== NULL && $comment->getPost_id() == $post->getId()): ?>
+                                    <?php foreach($users as $user): ?>
+                                        <?php if($comment->getUser_id()== $user->getId() ): ?>
+                                            <div class="container row mx-auto">
+                                                <p class="col-sm-8"><?= $user->getName() ;?> : <?= $comment->getComment();?></p>
+                                                <?php if (array_key_exists('name', $_SESSION) == TRUE):?>
+                                                    <?php if ($_SESSION['id'] == $comment->getUser_id() || $_SESSION['role'] == 'admin'): ?>
+                                                        <form method="POST" action="<?= URL ?>articles/dc/<?= $comment->getId();?>" class="col-sm-2">
+                                                            <input type="hidden" name="post_id" value="<?= $post->getId() ?>" />
+                                                            <button class="btn btn-outline-secondary" type="submit">Delete</button>
+                                                        </form>
+                                                        <?php endif; ?>
+                                                    <?php else :?>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                        <?php endforeach; ?>
+                <?php else:?>
+                                <p>No comments</p>
+                <?php endif; ?>
             <?php endif; ?>
             </div>
 

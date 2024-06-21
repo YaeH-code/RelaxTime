@@ -139,7 +139,7 @@ class PostsController{
             throw new Exception("This file extension is not recognized");
         if(file_exists($target_file))
             throw new Exception("This file still exist");
-        if($file['size'] > 500000)
+        if($file['size'] > 100000000)
             throw new Exception("This file is too big");
         if(!move_uploaded_file($file['tmp_name'], $target_file))
             throw new Exception("Sorry, it doesn't work");
@@ -180,7 +180,7 @@ class PostsController{
         require "views/allPosts.view.php";// on stock la liste des posts dans $posts et on selectionne le template pour les afficher
     }
     public function adminPage(){
-        if (array_key_exists('name', $_SESSION) !== TRUE || $_SESSION['role'] !== 'admin' || $_SESSION['name'] !== 'Cyrille'){
+        if (array_key_exists('name', $_SESSION) !== TRUE || $_SESSION['role'] !== 'admin'){
             header('Location: '. URL . "signup");
         }else{
             $posts = $this->postManager->getPosts();

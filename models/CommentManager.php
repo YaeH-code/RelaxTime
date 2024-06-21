@@ -24,9 +24,14 @@ class CommentManager extends Model{
         }
     }
     public function getCommentsById($id){
-        for($i=0; $i < count($this->comments);$i++){
-            if($this->comments[$i]->getPost_id() == $id){
-                return $this->comments;
+        if(empty($comments)){
+            return false;
+        }
+        else{
+            for($i=0; $i < count($this->comments);$i++){
+                if($this->comments[$i]->getPost_id() == $id){
+                    return $this->comments;
+                }
             }
         }
     }

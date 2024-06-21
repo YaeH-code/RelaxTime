@@ -19,14 +19,18 @@ ob_start();
         </div>
         <div class="row">
             <div for="category" class="col">Genre : </div>
-                <?php foreach($categories as $category): ?>
-                    <div class="form-check col">
-                        <input class="form-check-input" type="radio" name="category" id="flexRadioDefault1" value="<?= $category->getId(); ?>">
-                        <label class="form-check-label" for="flexRadioDefault1" value="<?= $category->getId(); ?>">
-                            <?= $category->getCat() ?>
-                        </label>
-                    </div>
-                <?php endforeach; ?>
+                <?php if(empty($categories)):?>
+                    <p>No category</p>
+                <?php else :?>
+                    <?php foreach($categories as $category): ?>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="radio" name="category" id="flexRadioDefault1" value="<?= $category->getId(); ?>">
+                            <label class="form-check-label" for="flexRadioDefault1" value="<?= $category->getId(); ?>">
+                                <?= $category->getCat() ?>
+                            </label>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
         </div>
         <button type="submit" class="btn btn-primary my-5">OK</button>
     </form>
