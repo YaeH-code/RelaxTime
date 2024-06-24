@@ -27,52 +27,64 @@ catch(Exception $e){
 // a la place des if else on peut mettre un switch dans un switch
 
 
-function MainRoute($url, $postController, $authController)
-{
-    switch($url[0]){// on vas tester tous les 
-        case "home" : require "views/home.view.php";
-        break;
-        case "articles" : 
-            ArticlesRoute($url, $postController);
-        break;
-        case "login" : 
-            if(empty($url[1])){
-                require "views/login.view.php";
-            }else if($url[1] === "lv"){
-                $authController->login();
-            }else if($url[1] === "pw"){
-                $authController->sedMail();
-            }
-        break;
-        case "logout" : 
-                $authController->logout();
-            require "views/home.view.php";
+    function MainRoute($url, $postController, $authController)
+    {
+        switch($url[0]){// on vas tester tous les 
+            case "home" : require "views/home.view.php";
             break;
-        case "signup" :
-            if(empty($url[1])){
-                require "views/creatAccount.view.php";
-            }else if($url[1] === "sv"){
-                $authController->alertFormSignup();
+            case "admin" : 
+                AdminRoute($url, $postController);
+            break;
+            case "articles" : 
+                ArticlesRoute($url, $postController);
+            break;
+            case "login" : 
+                if(empty($url[1])){
+                    require "views/login.view.php";
+                }else if($url[1] === "lv"){
+                    $authController->login();
+                }else if($url[1] === "pw"){
+                    $authController->sedMail();
+                }
+            break;
+            case "logout" : 
+                    $authController->logout();
+                require "views/home.view.php";
+                break;
+            case "signup" :
+                if(empty($url[1])){
+                    require "views/creatAccount.view.php";
+                }else if($url[1] === "sv"){
+                    $authController->alertFormSignup();
+                }
+                break;
+                default : throw new Exception("This page doesn't exist");
             }
-        break;
-        case "admin" : 
-            if(empty($url[1])){
-                $postController->adminPage();
-            }else if($url[1] === "adv"){
-                $postController->creatCatValidation();
-            }else if($url[1] === "addcv"){
-                $postController->deleteCatValidation($url[2]);
-            }else if($url[1] === "adm"){
-                $postController->modificationUser($url[2]);
-            }else if($url[1] === "admv"){
-                $postController->modificationUserValidation();
-            }else if($url[1] === "adduv"){
-                $postController->deleteUserValidation($url[2]);
-            }
-        break;
-        default : throw new Exception("This page doesn't exist");
     }
-}
+    function AdminRoute($url, $postController) 
+    {
+        switch ($url)
+        {
+            case empty($url[1]):
+                $postController->adminPage();
+                break;
+            case($url[1] === "adv") :
+                $postController->creatCatValidation();
+                break;
+            case($url[1] === "addcv") :
+                $postController->deleteCatValidation($url[2]);
+                break;
+            case($url[1] === "adm") :
+                $postController->modificationUser($url[2]);
+                break;
+            case($url[1] === "admv") :
+                $postController->modificationUserValidation();
+                break;
+            case($url[1] === "aduv") :
+                $postController->deleteUserValidation($url[2]);
+                break;
+        }
+    }
     function ArticlesRoute($url, $postController)
     {
         switch ($url)
