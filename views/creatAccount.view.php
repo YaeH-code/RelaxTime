@@ -27,7 +27,8 @@ endif;
         <div class="mb-3 row">
             <label for="inputPassword" class="text-end col-sm-2 col-form-label">Password(more than 8 letters): </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : null ?>" >
+                <input type="password" class="form-control" id="myInput" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : null ?>" >
+                <input type="checkbox" onclick="togglePW()">Show Password
             </div>
             <div class="col-sm-2">
                 <button type="submit" class="btn btn-primary my-3 my-sm-0">OK</button>

@@ -20,7 +20,8 @@ ob_start();
         <div class="mb-3 row">
             <label for="password" class="text-end col-sm-2 col-form-label">Password (more than 8 letters): </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="myInput" name="password">
+                <input type="checkbox" onclick="togglePW()">Show Password
             </div>
             <div class="col-sm-2">
                 <button type="submit" class="btn btn-primary">OK</button>
