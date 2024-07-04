@@ -8,10 +8,11 @@ Main purpose for me was to apply at first skills and knowledge I learnt during m
 
 - Clone this repository
 - Create a local database (name = relaxtime).
-- Launch the database SQL script stored in the project directory
-- Launch the project and sign up to create an account
+- Launch the database SQL script stored in the project resources directory
+- Launch the project and sign up to create an account / 
+or use the actual one (Andre Langlois - an.langlois@outlook.com - mdp : 12345678)
 - GO to Database and change your created account role to Admin.
-- Please enjoy features !
+- Please enjoy your visit !
 
 ### Stack Technic
 - MySQL 5
