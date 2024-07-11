@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 04, 2024 at 08:07 AM
+-- Generation Time: Jul 11, 2024 at 09:55 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -101,9 +101,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
 (1, 'Amandine Cherryz', 'amandine.che@gmail.com', '$2y$10$bYqO8q/l72WBnkPPl62uROMz6HcsEEVM5G5UhANk6nyZsRf/rsk26', 'user'),
-(2, 'Andre Langlois', 'an.langlois@outlook.com', '$2y$10$PcvVH8neEvWQCf9KjoGTKu7IbjvP8EeJnVk6689nz6PBr4JBbhlQK', 'admin'),
+(2, 'Andre Langlois', 'an.langlois@outlook.com', '$2y$10$6Zy6NZlFMKPZ77xoFrkUq.1wdMx2LMS0ZkHZsq3sS.lGmKfix5F16', 'admin'),
 (4, 'Jean Doe', 'je_Doe23@gmail.com', '$2y$10$tNIgjZlDOgIuulOvplhbZ.HL3WObUR4Bf6iEcx11juTqTbY6IpQ0e', 'user'),
-(5, 'Hector Henri', 'heHenri@outlook.com', '$2y$10$7LqihRtt8Sol5k.GizHLt./nP2kEE0T07JT.PGTxPmhlqa.RAgYvS', 'user');
+(5, 'Hector Henri', 'heHenri@outlook.com', '$2y$10$7LqihRtt8Sol5k.GizHLt./nP2kEE0T07JT.PGTxPmhlqa.RAgYvS', 'user'),
+(6, 'Cyrille', 'joe.marcel@gmail.com', '$2y$10$9vOOagRkO1rYy49Jy8Ums.8UQDjZ1jyuWX7N4AXMZlLn.kOsjUFK6', 'user'),
+(7, 'Julie Dupont', 'Julie.Du@outlook.fr', '$2y$10$6avvZ.Vh7BLtxlIMdtoTT.Rvk.PL/lZOLPUcSZLnsKnehyFzljPs2', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -151,19 +153,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
