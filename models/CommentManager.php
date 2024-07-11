@@ -24,15 +24,15 @@ class CommentManager extends Model{
         }
     }
     public function getCommentsById($id){
-        if(empty($comments)){
-            return false;
-        }
-        else{
+        if(!empty($this->comments)){
             for($i=0; $i < count($this->comments);$i++){
                 if($this->comments[$i]->getPost_id() == $id){
                     return $this->comments;
                 }
             }
+        }
+        else{
+            return false;
         }
     }
     public function creatCommentBd($comment,$post_id,$user_id){

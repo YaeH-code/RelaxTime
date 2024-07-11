@@ -35,11 +35,8 @@ endif;
     </div>
     <!-- comments -->
             <div class="text-center" style="overflow-y: auto; max-height: 200px;">
-            <?php if(empty($comments)):?>
-                <p>Empty comments</p>
-            <?php else :?>
-                <?php if($comments !== NULL): ?>
-                        <?php foreach($comments as $comment): ?>
+                <?php if(!empty($comments)): ?>
+                        <?php foreach((array) $comments as $comment): ?>
                                 <?php if($comment->getUser_id() !== NULL && $comment->getPost_id() == $post->getId()): ?>
                                     <?php foreach($users as $user): ?>
                                         <?php if($comment->getUser_id()== $user->getId() ): ?>
@@ -62,7 +59,6 @@ endif;
                 <?php else:?>
                                 <p>No comments</p>
                 <?php endif; ?>
-            <?php endif; ?>
             </div>
 
             <form method="POST" action="<?= URL ?>articles/cm" class="col-8 my-5 mx-auto">
