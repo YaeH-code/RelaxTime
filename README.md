@@ -15,8 +15,9 @@ or use the actual one (Andre Langlois - an.langlois@outlook.com - mdp : 12345678
 - Please enjoy your visit !
 
 ### Stack Technic
-- MySQL 5
-- PHP 8
+- MySQL 8.0.3
+- PHP 8.0.3
+- Apache 2.4.59 VS17
 - PHPMyAdmin
 
 ## Features
