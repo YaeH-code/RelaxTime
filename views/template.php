@@ -13,7 +13,7 @@
     <!-- global/css -->
     <link rel="stylesheet" type="text/css" href="<?= URL ?>public/css/global.css">
     <!-- global/JS -->
-    <script src="<?= URL ?>JS/globalJS.js"></script>
+    <script type="text/javaScript" src="<?= URL ?>public/JS/globalJS.js"></script>
     <!-- icons/fontawesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <!-- bootstrap/JS -->
