@@ -30,6 +30,13 @@ endif;
           <?php foreach($posts as $post) : ?>
               <div class="card rounded col-6 col-md-3 p-3 my-1">
                   <a href="<?= URL ?>articles/p/<?= $post->getId(); ?>" class="text-decoration-none">
+                  <div>
+                    <?php if($post->getImage()  !== ''):?>
+                            <img src="<?= URL ?>public/images/<?= $post->getImage(); ?>" class="rounded card-img-top home-img">
+                    <?php else:?>
+                        <p>No image</p>
+                    <?php endif;?>
+                  </div>
                     <div class="card-body">
                         <p class="card-title fs-5"><?= strlen($post->getTitle()) > 26 ? substr(htmlspecialchars($post->getTitle()), 0, 25) . "&nbsp;..." : $post->getTitle(); ?></p>
                         <p class="text-secondary"><?= substr(htmlspecialchars($post->getContent()), 0, 30) ?>&nbsp;...</p>

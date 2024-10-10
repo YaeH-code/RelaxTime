@@ -86,7 +86,7 @@ endif;
                     </div>
                     <div class="d-flex flex-row justify-content-end align-items-end">
                         <a href="<?= URL ?>admin/adm/<?= $user->getId(); ?>" class="btn btn-outline-secondary">Modify</a>
-                        <form method="POST" action="<?= URL ?>admin/adduv/<?= $user->getId();?>" class="ms-3">
+                        <form method="POST" action="<?= URL ?>admin/aduv/<?= $user->getId();?>" class="ms-3">
                             <button class="btn btn-secondary" type="submit">D</button>
                         </form>
                     </div>
