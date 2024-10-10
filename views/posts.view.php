@@ -78,7 +78,7 @@ endif;
                                 <div class="row g-0">
                                     <div class="col-md-4">
                                         <?php if($post->getImage()  !== ''):?>
-                                                <img src="public/images/<?= $post->getImage(); ?>" class="rounded card-img-top home-img">
+                                                <img src="<?= URL ?>public/images/<?= $post->getImage(); ?>" class="rounded card-img-top home-img">
                                         <?php else:?>
                                             <p>No image</p>
                                         <?php endif;?>
